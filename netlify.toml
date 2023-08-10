@@ -1,0 +1,23 @@
+[[redirects]]
+from = "/*"
+to =  "index.html"
+status = 200
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+
+[build]
+  functions = "src/api"
+
+[[redirects]]
+  from = "/api/productsA"
+  to = "/.netlify/functions/productsA"
+  status = 200
+
+[[redirects]]
+  from = "/api/productsB"
+  to = "/.netlify/functions/productsB"
+  status = 200

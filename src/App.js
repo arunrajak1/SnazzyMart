@@ -8,6 +8,8 @@ import CategoryProducts from './modules/CategoryProducts';
 import Cart from './modules/Cart';
 import ContactPage from './modules/ContactPage';
 import About from './modules/About';
+import ErrorPage from './modules/404 Page';
+
 
 
 function App() {
@@ -22,7 +24,7 @@ function App() {
         <Route path='cart' element={<Cart/>} />
         <Route path="/about" element={<About/>} />
         <Route path="/contact" element={<ContactPage/>} />
-        <Route path='*' element={<div>404 Not Found</div>} />
+        <Route path='*' element={<ErrorPage/>} /> 
       </Routes>
 
       <Footer></Footer>

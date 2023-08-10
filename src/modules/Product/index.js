@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react'
-import { Navigate, useParams } from 'react-router-dom'
+import { useParams,useNavigate } from 'react-router-dom'
+import ErrorPage from '../404 Page';
 
 
 const Product = () => {
     const { id } = useParams();
     // console.log(id,'id');
     const [product, setProduct] = useState({})
-
+    const navigate = useNavigate();
 
     useEffect(() => {
         const fatchProduct = async () => {
@@ -41,13 +42,12 @@ const Product = () => {
         localStorage.setItem('cart',JSON.stringify([...cart,{...product,quantity:1}]))
 
     }
-    alert( "product added to card")
     if(redirect){
-        Navigate('/cart')
+        navigate('/cart')
     }
     }
 
-   if( !Object.keys(product).length > 0) return <div>Product  not found</div>
+   if( !Object.keys(product).length > 0) return <div>{ErrorPage}</div>
     return (
         <section className="text-gray-600 body-font overflow-hidden ">
             <div className="container px-2 py-24 mx-auto ">
