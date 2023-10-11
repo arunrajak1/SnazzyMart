@@ -32,7 +32,7 @@ const Hero = () => {
           </div>
         </div>
         <div className="">
-          {randomImage && <img className="object-cover object-center rounded" alt="Random product" src={randomImage}   width="500" height="400" />}
+          {randomImage && <img className="object-contain h-full w-96 block" alt="Random product" src={randomImage}   width="500" height="400" />}
         </div>
       </div>
     </section>
